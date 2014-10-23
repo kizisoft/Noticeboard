@@ -1,0 +1,45 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;
+  border-style:none;
+}
+
+.comment-content {
+    overflow: hidden;
+    white-space: nowrap;
+    -moz-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    width: 650px;
+}
+
+#commentHolder {
+    margin-bottom: 10px;
+}
+
+.inline-element label {
+    display: inline;
+    vertical-align: baseline;
+    float: left;
+    margin: 5px;
+}
+
+#NavigationMenu + div {
+    clear: none !important;
+}
+
+#post-content {
+    width: 100%;
+}
+
+.nav-dynamic {
+    background: #333333;
+}
+
+.cell-center {
+    text-align: center !important;
+}
