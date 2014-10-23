@@ -1,6 +1,6 @@
-﻿<%@ Page Title="ACP Edit Post" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditPost.aspx.cs" Inherits="Noticeboard.Admin.EditPosts" EnableEventValidation="false" %>
+﻿<%@ Page Title="ACP Edit Post" Language="C#" MasterPageFile="Admin.Master" AutoEventWireup="true" CodeBehind="EditPost.aspx.cs" Inherits="Noticeboard.Admin.EditPosts" EnableEventValidation="false" %>
 
-<asp:Content ID="ContentAdminEditPost" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentAdminEditPost" ContentPlaceHolderID="AdminContent" runat="server">
     
     <h1>ACP Edit Post</h1>
 

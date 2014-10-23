@@ -1,7 +1,7 @@
-﻿<%@ Page Title="ACP Users" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="ACP Users" Language="C#" MasterPageFile="Admin.Master" AutoEventWireup="true" 
     CodeBehind="Users.aspx.cs" Inherits="Noticeboard.Admin.Users" %>
 
-<asp:Content ID="ContentAdminUsers" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentAdminUsers" ContentPlaceHolderID="AdminContent" runat="server">
     
     <h1>ACP Users</h1>
     

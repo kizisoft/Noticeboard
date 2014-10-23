@@ -1,7 +1,7 @@
-﻿<%@ Page Title="ACP Edit Category" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="ACP Edit Category" Language="C#" MasterPageFile="Admin.Master" AutoEventWireup="true" 
     CodeBehind="EditCategory.aspx.cs" Inherits="Noticeboard.Admin.EditCategory" %>
 
-<asp:Content ID="ContentAdminEditCategory" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentAdminEditCategory" ContentPlaceHolderID="AdminContent" runat="server">
     
     <h1>ACP Edit Category</h1>
     

@@ -1,7 +1,7 @@
-﻿<%@ Page Title="ACP Comments" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="ACP Comments" Language="C#" MasterPageFile="Admin.Master" AutoEventWireup="true" 
     CodeBehind="Comments.aspx.cs" Inherits="Noticeboard.Admin.Comments" %>
 
-<asp:Content ID="ContentAdminComments" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentAdminComments" ContentPlaceHolderID="AdminContent" runat="server">
     
     <h1>ACP Comments <a href="Posts.aspx" class="btn btn-inverse pull-right">Go Back</a></h1>
     

@@ -1,7 +1,7 @@
-﻿<%@ Page Title="ACP Edit Comment" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+﻿<%@ Page Title="ACP Edit Comment" Language="C#" MasterPageFile="Admin.Master" AutoEventWireup="true" 
     CodeBehind="EditComment.aspx.cs" Inherits="Noticeboard.Admin.EditComment" %>
 
-<asp:Content ID="ContentAdminEditComment" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentAdminEditComment" ContentPlaceHolderID="AdminContent" runat="server">
     
     <h1>ACP Edit Comment</h1>
     
