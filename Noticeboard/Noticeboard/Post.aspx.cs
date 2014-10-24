@@ -220,18 +220,20 @@ namespace Noticeboard
                 {
                     Response.Redirect("~/Account/Login.aspx");
                 }
-                else if (!(this.User.Identity.Name == db.Posts.Find(this.postId).AspNetUser.UserName))
+                else if (this.User.IsInRole("admin"))
+                {
+                    var post = db.Posts.Find(this.postId);
+                    db.Comments.RemoveRange(post.Comments);
+                    db.Posts.Remove(post);
+                    db.SaveChanges();
+                    ErrorSuccessNotifier.AddSuccessMessage("Post successfully deleted");
+                }
+                else
                 {
                     ErrorSuccessNotifier.AddInfoMessage("You don't have permission to delete this post");
                     //Response.Redirect("Post.aspx?id=" + this.postId);
                     return;
                 }
-                var post = db.Posts.Find(this.postId);
-                db.Comments.RemoveRange(post.Comments);
-                db.Posts.Remove(post);
-                db.SaveChanges();
-                ErrorSuccessNotifier.AddSuccessMessage("Post successfully deleted");
-               
             }
             catch (Exception ex)
             {
@@ -249,22 +251,24 @@ namespace Noticeboard
             {
                 Response.Redirect("~/Account/Login.aspx");
             }
-            else if (!(this.User.Identity.Name == db.Comments.Find(CommentId).AspNetUser.UserName))
+            else if (this.User.IsInRole("admin"))
+            {
+                try
+                {
+                    var comment = db.Comments.Find(CommentId);
+                    db.Comments.Remove(comment);
+                    db.SaveChanges();
+                    ErrorSuccessNotifier.AddSuccessMessage("Comment succesfully deleted");
+                }
+                catch (Exception ex)
+                {
+                    ErrorSuccessNotifier.AddErrorMessage(ex.Message);
+                }
+            }
+            else
             {
                 ErrorSuccessNotifier.AddInfoMessage("You don't have permission to delete this comment");
                 Response.Redirect("Post.aspx?id=" + this.postId);
-            }
-
-            try
-            {
-                var comment = db.Comments.Find(CommentId);
-                db.Comments.Remove(comment);
-                db.SaveChanges();
-                ErrorSuccessNotifier.AddSuccessMessage("Comment succesfully deleted");
-            }
-            catch (Exception ex)
-            {
-                ErrorSuccessNotifier.AddErrorMessage(ex.Message);
             }
         }
     }

@@ -3,7 +3,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
         <h1><%: Title %>.</h1>       
-    <//hgroup>
+    </hgroup>
     <p class="text-error">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>

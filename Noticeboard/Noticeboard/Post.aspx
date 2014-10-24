@@ -26,7 +26,8 @@
                             ID="LinkButtonDeletePost"
                             OnClientClick="confirm('Are you sure you want to delete this post')"
                             CommandName="Delete"
-                            CssClass="btn btn-danger btn-small" />
+                            CssClass="btn btn-danger btn-small"
+                            Style=<%#: this.User.IsInRole("admin") ? "display: inner-block;" :  "display: none;" %> />
                     </div>
                     <h3><%#: Item.Title %></h3>
                     <p><%#: Item.Content %></p>
@@ -73,7 +74,8 @@
                                             OnCommand="ButtonEditComment_Command" />
                                         <asp:LinkButton Text="Delete" runat="server"
                                             ID="LinkButtonDeleteComment" CssClass="btn btn-danger btn-small"
-                                            CommandName="Delete" />
+                                            CommandName="Delete"
+                                            Style='<%#: this.User.IsInRole("admin") ? "display: inner-block;" :  "display: none;" %>' />
                                     </div>
                                     <p><%#: Item.Content %></p>
                                 </div>
@@ -119,11 +121,8 @@
 
             <asp:UpdatePanel runat="server" UpdateMode="Conditional" ID="UpdatePanelButton">
                 <ContentTemplate>
-                    
                 </ContentTemplate>
             </asp:UpdatePanel>
-
-
         </ItemTemplate>
     </asp:FormView>
 </asp:Content>
