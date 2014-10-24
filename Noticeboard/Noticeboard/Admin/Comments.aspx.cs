@@ -12,6 +12,33 @@
         {
             var postId = Convert.ToInt32(this.Request.Params["postId"]);
 
+            if (postId == 0)
+            {
+                try
+                {
+                    var context = new NoticeboardEntities();
+                    var comments =
+                        from comment in context.Comments
+                        orderby comment.CommentDate descending
+                        select new CommentModel
+                        {
+                            CommentId = comment.CommentId,
+                            CommentDate = comment.CommentDate,
+                            AuthorUsername = comment.AspNetUser.UserName,
+                            Content = comment.Content,
+                            PostId = comment.PostId
+                        };
+
+                    return comments;
+                }
+                catch (Exception ex)
+                {
+                    ErrorSuccessNotifier.AddErrorMessage(ex);
+                }
+
+                return null;
+            }
+
             try
             {
                 var context = new NoticeboardEntities();
@@ -63,6 +90,12 @@
 
             using (var context = new NoticeboardEntities())
             {
+                if (postId == 0)
+                {
+                    this.LabelPostTitle.Text = "All";
+                    return;
+                }
+
                 try
                 {
                     this.LabelPostTitle.Text = context.Posts.Find(postId).Title;
