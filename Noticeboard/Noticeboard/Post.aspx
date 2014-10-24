@@ -19,15 +19,15 @@
                         <span class="label label-success">created on <%# Item.PostDate %></span>
                         <asp:LinkButton Text="Edit" runat="server"
                             ID="ButtonEditPost"
-                            CommandName="Edit" CommandArgument="<%#: Item.PostId %>"
                             CssClass="btn btn-info btn-small"
+                            CommandName="Edit" CommandArgument="<%#: Item.PostId %>"
                             OnCommand="ButtonEditPost_Command" />
                         <asp:LinkButton Text="Delete" runat="server"
+                            CssClass="btn btn-danger btn-small"
                             ID="LinkButtonDeletePost"
                             OnClientClick="confirm('Are you sure you want to delete this post')"
                             CommandName="Delete"
-                            CssClass="btn btn-danger btn-small"
-                            Style=<%#: this.User.IsInRole("admin") ? "display: inner-block;" :  "display: none;" %> />
+                            Style='<%#: this.User.IsInRole("admin") ? "display: inner-block;" :  "display: none;" %>' />
                     </div>
                     <h3><%#: Item.Title %></h3>
                     <p><%#: Item.Content %></p>
