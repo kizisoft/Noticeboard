@@ -60,7 +60,7 @@
                                 EnableViewState="False" Orientation="Horizontal"
                                 DataSourceID="SiteMapDataSource" StaticDisplayLevels="2" IncludeStyleBlock="False">
                                 <StaticMenuStyle CssClass="nav nav-pills nav-stacked" />
-                                <DynamicMenuStyle CssClass="nav nav-pills nav-stacked nav-dynamic"/>
+                                <DynamicMenuStyle CssClass="nav nav-pills nav-stacked navbar navbar-default navbar-inner "/>
                             </asp:Menu>
 
                             <asp:LoginView runat="server" ViewStateMode="Disabled">

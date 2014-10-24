@@ -5,8 +5,9 @@
     <siteMapNode title="Notices" description="Posts" url="~/Default.aspx" />
     <siteMapNode title="Admin" description="Admin Panel" url="~/Admin/Admin.aspx" roles="admin">
       <siteMapNode title="Users" description="Users" url="~/Admin/Users.aspx" />
-      <siteMapNode title="Notices" description="Posts" url="~/Admin/Posts.aspx" />
       <siteMapNode title="Categories" description="Categories" url="~/Admin/Categories.aspx" />
+      <siteMapNode title="Notices" description="Posts" url="~/Admin/Posts.aspx" />
+      <siteMapNode title="Comments" description="Comments" url="~/Admin/Comments.aspx" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>
